@@ -1,13 +1,33 @@
 ﻿using Environment.Tasks;
+using System.Collections; 
+using System.Collections.Generic; 
 using UnityEngine;
+using Utils; 
 
 namespace Environment {
     public class Computer : MonoBehaviour, IInteractable {
         [SerializeField]
-        private Task testTask = null; // Put your stack/queue here :)
+        private List<Task> testTask = new List<Task>(); // Put your stack/queue here :)
+        private int value;
+          GenericQueue<Task> myQueue = new GenericQueue<Task>(); 
+         private void Awake()
+         {
+         myQueue.Clear(); 
+         for (int i = 0; i < testTask.Count; i++)
+         {
+          myQueue.Enqueue(testTask[i]); 
+         }
+       
+      
+        
+         }
+
+
 
         public void OnInteract() {
-            testTask.Execute();
+        myQueue.Dequeue().Execute(); 
+
+       
         }
     }
 }
