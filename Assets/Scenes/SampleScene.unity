@@ -5657,6 +5657,18 @@ PrefabInstance:
       propertyPath: 'testTask.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: b7ac3e9acb28dea438809df64c1abdc9, type: 2}
+    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: stackTaskTest.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: 'stackTaskTest.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 52e8e3d92a43feb42943bb6e25d432af, type: 2}
+    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: 'stackTaskTest.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7f2d9e02ffd82864e89e8ed592a6c763, type: 2}
     - target: {fileID: 5694532769315531512, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
