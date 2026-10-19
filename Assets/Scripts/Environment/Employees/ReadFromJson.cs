@@ -9,48 +9,55 @@ namespace Environment.Tasks {
     public class ReadFromJson : Task {
       public TextAsset EmployeeJSON; 
 
+      [SerializeField] private SortEmployees sortEmployeesTask; 
+    
+     
 
-        public override void Execute() {
-            Employees employeesInJson = JsonUtility.FromJson<Employees>(EmployeeJSON.text); 
-            foreach (EmployeeInfo employee in employeesInJson.employees)
-   {
+
+      public override void Execute() {
+        EmployeeInfo[] employees = JsonUtility.FromJson<Employees>(EmployeeJSON.text).employees; 
+        int i = 0; 
+        foreach (EmployeeInfo employee in employees)
+        {
+          
+          // Parse the name 
+          string employeeName = employee.name; 
+
+          // Parse the EmployeeID
+
+          string inputInt = employee.employeeId; 
+          int myEmployeeID = int.Parse(inputInt); 
+
+          // Parse the hasEngineRoomClearance
+
+          string inputName = employee.hasEngineRoomClearance; 
+          bool hasClearance = bool.Parse(inputName); 
+
+          // Parse the lastEntranceInEngineRoom 
+          
+          string lastEntrenance = employee.lastEntranceInEngineRoom; 
+          DateTime myLastEntranceInEngineRoom = DateTime.Parse(lastEntrenance); 
+          
+          // Parse the last exit 
+
+          string lastExit = employee.lastExitFromEngineRoom; 
+          DateTime myLastExitFromEngineRoom  = DateTime.Parse(lastExit); 
+   
+   
  
-     // Parse the name 
-     string employeeName = employee.name; 
    
-     // Parse the EmployeeID
-
-     string inputInt = employee.employeeId; 
-     int employeeID = int.Parse(inputInt);
-
-    // Parse the hasEngineRoomClearance
-
-    string inputName = employee.hasEngineRoomClearance; 
-    bool hasClearance = bool.Parse(inputName); 
-
-    // Parse the lastEntranceInEngineRoom 
-    
-    string lastEntrenance = employee.lastEntranceInEngineRoom; 
-    DateTime lastEntranceInEngineRoom = DateTime.Parse(lastEntrenance); 
-    
-    // Parse the last exit 
-
-    string lastExit = employee.lastExitFromEngineRoom; 
-    DateTime lastExitFromEngineRoom  = DateTime.Parse(lastExit); 
+         sortEmployeesTask.employeeData[i] = 
+        (employeeName: employeeName, employeeID: myEmployeeID, hasEngineClearance: hasClearance, employeeLastEntrenance: myLastEntranceInEngineRoom, employeeLastExit: myLastExitFromEngineRoom); 
    
+         i++; 
+  
    
-
-    Debug.Log("Employee found!" + "\n" +
-              "Employees name:" + " " + employeeName + "\n" +
-              "Employees ID:" + " "  + employeeID + "\n" +
-              "Employees clearance:" + " " + hasClearance + "\n" +
-              "Employees last enternance in Engine room:" + " " + lastEntranceInEngineRoom + "\n" +
-              "Employees last exit in Engine room:" + " " + lastExitFromEngineRoom); 
-
-    
    
    }
-
         }
     }
+
+
+
+    
 }

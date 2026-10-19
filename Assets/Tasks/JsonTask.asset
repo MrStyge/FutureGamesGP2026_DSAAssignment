@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: JsonTask
   m_EditorClassIdentifier: Assembly-CSharp::Environment.Tasks.ReadFromJson
   EmployeeJSON: {fileID: 4900000, guid: 5063d8b5a286c484d81e9fc9d3fed50c, type: 3}
+  sortEmployeesTask: {fileID: 11400000, guid: 24e8f25baa9fd5c48ad17ba476176766, type: 2}
+  i: 0
+  j: 0
