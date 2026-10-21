@@ -10,7 +10,8 @@ namespace Environment.Tasks {
       public TextAsset EmployeeJSON; 
 
       [SerializeField] private SortEmployees sortEmployeesTask; 
-    
+      [SerializeField] private HashMap hasMapTask; 
+      
      
 
 
@@ -48,12 +49,22 @@ namespace Environment.Tasks {
    
          sortEmployeesTask.employeeData[i] = 
         (employeeName: employeeName, employeeID: myEmployeeID, hasEngineClearance: hasClearance, employeeLastEntrenance: myLastEntranceInEngineRoom, employeeLastExit: myLastExitFromEngineRoom); 
-   
+        
+         if(!hasMapTask.employeeHashMap.ContainsKey(myEmployeeID))
+         {
+           hasMapTask.employeeHashMap.Add(myEmployeeID, employee);
+         }
+     
+
+        
+
+        
          i++; 
-  
+      
    
    
    }
+  
         }
     }
 

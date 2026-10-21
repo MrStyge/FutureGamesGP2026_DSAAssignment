@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 523275a17e92f1842824e922d040a5e3, type: 3}
   m_Name: JsonTask
   m_EditorClassIdentifier: Assembly-CSharp::Environment.Tasks.ReadFromJson
-  EmployeeJSON: {fileID: 4900000, guid: 5063d8b5a286c484d81e9fc9d3fed50c, type: 3}
-  sortEmployeesTask: {fileID: 11400000, guid: 24e8f25baa9fd5c48ad17ba476176766, type: 2}
-  i: 0
-  j: 0
+  EmployeeJSON: {fileID: 4900000, guid: 5474b3e3cd555ac4fa52744fb7c1f5b3, type: 3}
+  sortEmployeesTask: {fileID: 11400000, guid: c2f639e80be09474987f4a4cc10acb3c, type: 2}
+  hasMapTask: {fileID: 11400000, guid: 5f3f3bdf6a93198488e088a5362e90e8, type: 2}

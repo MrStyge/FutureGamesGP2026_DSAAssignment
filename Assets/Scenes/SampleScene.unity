@@ -5659,14 +5659,18 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b7ac3e9acb28dea438809df64c1abdc9, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: stackTaskTest.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'stackTaskTest.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 24e8f25baa9fd5c48ad17ba476176766, type: 2}
+      objectReference: {fileID: 11400000, guid: 5f3f3bdf6a93198488e088a5362e90e8, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'stackTaskTest.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c2f639e80be09474987f4a4cc10acb3c, type: 2}
+    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: 'stackTaskTest.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 21ecb3a03036f8e47b961ecdd8daf63c, type: 2}
     - target: {fileID: 5694532769315531512, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
