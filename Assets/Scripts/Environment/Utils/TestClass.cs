@@ -4,9 +4,7 @@ using System.Collections.Generic;
 [Serializable]
 public class TestClass 
 {
-  // public List<int> objectList = new List<int>{7, 2, 1, 5, 2, 8, 6, 0, 4};
-  public int number1 = 3; 
-  public int number2 = 3; 
-  public float number3 = 4.5f; 
+   public List<int> objectList = new List<int>{10,9,8,7,6,1,4,3,2,5};
+ 
    
 }

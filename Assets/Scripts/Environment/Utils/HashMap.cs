@@ -18,11 +18,8 @@ namespace Environment.Tasks {
       public override void Execute() {
             
      
-         foreach(int id in employeeHashMap.Keys)
-         {
-            Debug.Log(id);
-            Debug.Log(employeeHashMap[id].lastEntranceInEngineRoom);  
-         }
+       // SortingDictionary.QuickSortDictionary(employeeHashMap, 0, employeeHashMap.Length - 1, x => x); 
+
          
 
       
