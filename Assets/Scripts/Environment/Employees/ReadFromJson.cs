@@ -50,6 +50,7 @@ namespace Environment.Tasks {
          sortEmployeesTask.employeeData[i] = 
         (employeeName: employeeName, employeeID: myEmployeeID, hasEngineClearance: hasClearance, employeeLastEntrenance: myLastEntranceInEngineRoom, employeeLastExit: myLastExitFromEngineRoom); 
         
+         // hashmap
          if(!hasMapTask.employeeHashMap.ContainsKey(myEmployeeID))
          {
            hasMapTask.employeeHashMap.Add(myEmployeeID, employee);
