@@ -54,6 +54,7 @@ namespace Environment.Tasks {
          if(!hasMapTask.employeeHashMap.ContainsKey(myEmployeeID))
          {
            hasMapTask.employeeHashMap.Add(myEmployeeID, employee);
+       //    Debug.Log(String.Join(",", hasMapTask.employeeHashMap[myEmployeeID].lastEntranceInEngineRoom));
          }
      
 

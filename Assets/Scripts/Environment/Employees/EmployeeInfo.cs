@@ -7,4 +7,8 @@ public class EmployeeInfo
   public string hasEngineRoomClearance; 
   public string lastEntranceInEngineRoom; 
   public string lastExitFromEngineRoom; 
+
+
+ 
+  
 }

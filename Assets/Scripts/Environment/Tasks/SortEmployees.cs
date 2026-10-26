@@ -36,13 +36,20 @@ namespace Environment.Tasks {
           
        var stop = System.Diagnostics.Stopwatch.StartNew();
        stop.Start(); // Start timer
-       QuickSortAlgorithm.QuickSortTask(employeeData, 0, employeeData.Length - 1, valueToPrioritize => valueToPrioritize.employeeName);
+       QuickSortAlgorithm.QuickSortTask(employeeData, 0, employeeData.Length - 1, valueToPrioritize => valueToPrioritize.employeeLastEntrenance);
        stop.Stop();  // Stop timer
        Debug.Log(stop.ElapsedMilliseconds); 
        Debug.Log(String.Join("\n", employeeData)); 
        Debug.Log("Culprit:" + " " + employeeData[0].employeeName); 
           
          
+        int[] numbers = {1,2,3,4,5,6,7,8,9,10};
+        int target = 5; 
+       
+
+       int index = BinarySearch.BinarySearchAlgorithm(numbers, target); 
+       Debug.Log("The value" + " " + target + " " + "was found at" + " " + index); 
+     
         
       
     }
