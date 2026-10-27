@@ -19,7 +19,21 @@
       "employeeId": 667,
       "hasEngineRoomClearance": true,
       "lastEntranceInEngineRoom": "1969-01-01T00:00:00",
-      "lastExitFromEngineRoom": "2234-08-09T22:13:22"
+      "lastExitFromEngineRoom": "2234-08-09T22:13:24"
+    },
+     {
+      "name": "Test1",
+      "employeeId": 668,
+      "hasEngineRoomClearance": true,
+      "lastEntranceInEngineRoom": "178-01-01T00:00:00",
+      "lastExitFromEngineRoom": "2234-08-09T22:13:23"
+    },
+     {
+      "name": "Test2",
+      "employeeId": 669,
+      "hasEngineRoomClearance": true,
+      "lastEntranceInEngineRoom": "150-01-01T00:00:00",
+      "lastExitFromEngineRoom": "2234-08-09T22:13:24"
     },
 
     {

@@ -8,16 +8,22 @@ namespace Environment.Tasks {
     [CreateAssetMenu(fileName = "ReadFromJson", menuName = "ReadFromJson")]
     public class ReadFromJson : Task {
       public TextAsset EmployeeJSON; 
-
+      static public int arrayLength;
       [SerializeField] private SortEmployees sortEmployeesTask; 
       [SerializeField] private HashMap hasMapTask; 
       
+
      
 
 
       public override void Execute() {
         EmployeeInfo[] employees = JsonUtility.FromJson<Employees>(EmployeeJSON.text).employees; 
-        int i = 0; 
+         arrayLength = employees.Length; 
+    (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] tempTuple = 
+    new (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit)[arrayLength]; 
+         
+         int i = 0; 
+
         foreach (EmployeeInfo employee in employees)
         {
           
@@ -46,29 +52,26 @@ namespace Environment.Tasks {
    
    
  
-   
-         sortEmployeesTask.employeeData[i] = 
+         
+         tempTuple[i] = 
         (employeeName: employeeName, employeeID: myEmployeeID, hasEngineClearance: hasClearance, employeeLastEntrenance: myLastEntranceInEngineRoom, employeeLastExit: myLastExitFromEngineRoom); 
         
          // hashmap
-         if(!hasMapTask.employeeHashMap.ContainsKey(myEmployeeID))
-         {
-           hasMapTask.employeeHashMap.Add(myEmployeeID, employee);
-       //    Debug.Log(String.Join(",", hasMapTask.employeeHashMap[myEmployeeID].lastEntranceInEngineRoom));
-         }
-     
-
-        
-
-        
          i++; 
       
    
-   
    }
+    sortEmployeesTask.employeeData = tempTuple;
+
   
         }
     }
+
+
+
+
+
+  
 
 
 

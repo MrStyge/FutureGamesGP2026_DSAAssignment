@@ -5,16 +5,17 @@ using System.Diagnostics;
 using System.Collections.Generic; 
 using Utils;
 using Debug = UnityEngine.Debug;
+using System.Linq;
 
 namespace Environment.Tasks {
   [CreateAssetMenu(fileName = "SortEmployees", menuName = "Sort Employees")]
    public class SortEmployees : Task {
       
     [SerializeField] TestClass testClass; 
-  
-    public (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] employeeData = 
-    new (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit)[4]; 
-            
+   
+    
+    
+     public (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] employeeData; 
             
 
            
@@ -22,36 +23,27 @@ namespace Environment.Tasks {
 
     public override void Execute() {
             
-//     SortingScript.InsertionSort(employeeData, valueToPrioritize => valueToPrioritize.employeeLastEntrenance); // sortera efter last enternance in room 
-//     Debug.Log(String.Join("\n", employeeData)); 
-//     Debug.Log("Culprit:" + " " + employeeData[0].employeeName); 
 
-        
-//     TEST LISTA 
-//     int[] sortedArray = testClass.objectList.ToArray(); // spara kopian 
-//     SortingScript.InsertionSort(sortedArray, numberToPrioritize => numberToPrioritize); // tryck in originala och prioritizera samma värde, dvs, sortera efter bara värden
-//     Debug.Log(String.Join(",", sortedArray)); 
-
-//     QUICK SORT
           
-       var stop = System.Diagnostics.Stopwatch.StartNew();
-       stop.Start(); // Start timer
-       QuickSortAlgorithm.QuickSortTask(employeeData, 0, employeeData.Length - 1, valueToPrioritize => valueToPrioritize.employeeLastEntrenance);
-       stop.Stop();  // Stop timer
-       Debug.Log(stop.ElapsedMilliseconds); 
-       Debug.Log(String.Join("\n", employeeData)); 
-       Debug.Log("Culprit:" + " " + employeeData[0].employeeName); 
-          
-         
-        int[] numbers = {1,2,3,4,5,6,7,8,9,10};
-        int target = 5; 
-       
-
-       int index = BinarySearch.BinarySearchAlgorithm(numbers, target); 
-       Debug.Log("The value" + " " + target + " " + "was found at" + " " + index); 
-     
+      var stop = System.Diagnostics.Stopwatch.StartNew();
+      stop.Start(); // Start timer
+      QuickSortAlgorithm.QuickSortTask(employeeData, 0, employeeData.Length - 1, valueToPrioritize => valueToPrioritize.employeeLastEntrenance);
+      stop.Stop();  // Stop timer
+//    Debug.Log(stop.ElapsedMilliseconds); // Show time
+//    Debug.Log(String.Join("\n", employeeData)); 
+//    Debug.Log("Culprit:" + " " + employeeData[0].employeeName); // <------ Debug.log Quicksort output
         
-      
+        
+      int[] numbers = {1,2,3,4,5,6,7,8,9,10};
+
+      DateTime mintarget = new (100, 08, 09);
+      DateTime maxtarget = new (200, 08, 09); 
+
+      BinarySearch.BinarySearchAlgorithm(employeeData, mintarget, maxtarget, x => x.employeeLastEntrenance); 
+
     }
 }
+
+
+
 }
