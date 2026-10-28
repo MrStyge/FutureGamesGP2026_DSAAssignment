@@ -17,10 +17,11 @@ namespace Environment.Tasks {
 
 
       public override void Execute() {
-        EmployeeInfo[] employees = JsonUtility.FromJson<Employees>(EmployeeJSON.text).employees; 
+        
+         EmployeeInfo[] employees = JsonUtility.FromJson<Employees>(EmployeeJSON.text).employees; 
          arrayLength = employees.Length; 
-    (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] tempTuple = 
-    new (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit)[arrayLength]; 
+         (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] tempTuple = 
+         new (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit)[arrayLength]; 
          
          int i = 0; 
 

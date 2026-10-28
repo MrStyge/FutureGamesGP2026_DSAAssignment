@@ -3,7 +3,7 @@ using System.Collections;
 using System; 
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
-
+using Random=UnityEngine.Random;
 public static class QuickSortAlgorithm 
 {
    
@@ -20,8 +20,16 @@ public static class QuickSortAlgorithm
 
  public static int Partition<T, TKey>(T[] array, int start, int end, Func<T, TKey> key) where TKey: IComparable<TKey>
  {
+  
+          int randomPivot = Random.Range(start,end); 
+          T temp1 = array[randomPivot]; 
+       
+           array[randomPivot] = array[end]; 
+           array[end] = temp1; 
            
-            T pivot = array[end]; 
+          T pivot = array[end];
+
+            
             TKey currentKey = key(pivot); 
             int i = start - 1;
             T temp;
@@ -40,7 +48,7 @@ public static class QuickSortAlgorithm
             temp = array[i]; 
             array[i] = array[end]; 
             array[end] = temp; 
-           return i;
+            return i;
         
  }
 
