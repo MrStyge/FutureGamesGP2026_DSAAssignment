@@ -10,7 +10,7 @@ namespace Environment.Tasks {
       public TextAsset EmployeeJSON; 
       static public int arrayLength;
       [SerializeField] private SortEmployees sortEmployeesTask; 
-      [SerializeField] private HashMap hasMapTask; 
+      
       
 
      
@@ -18,7 +18,7 @@ namespace Environment.Tasks {
 
       public override void Execute() {
         
-         EmployeeInfo[] employees = JsonUtility.FromJson<Employees>(EmployeeJSON.text).employees; 
+         EmployeeInfo[] employees = JsonUtility.FromJson<EmployeesHelper>(EmployeeJSON.text).Employees; 
          arrayLength = employees.Length; 
          (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] tempTuple = 
          new (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit)[arrayLength]; 

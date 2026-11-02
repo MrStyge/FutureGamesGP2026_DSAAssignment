@@ -11,32 +11,44 @@ namespace Environment.Tasks {
   [CreateAssetMenu(fileName = "SortEmployees", menuName = "Sort Employees")]
    public class SortEmployees : Task {
       
-    [SerializeField] TestClass testClass; 
+  
+    private HashScript hashScript; 
    
-     public (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] employeeData; 
+    public (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] employeeData; 
             
 
            
-    public override void Execute() {
-        
-      var stop = System.Diagnostics.Stopwatch.StartNew();
-      stop.Start(); // Start timer
-      QuickSortAlgorithm.QuickSortTask(employeeData, 0, employeeData.Length - 1, valueToPrioritize => valueToPrioritize.employeeLastEntrenance);
-      stop.Stop();  // Stop timer
-//    Debug.Log(stop.ElapsedMilliseconds); // Show time
-//    Debug.Log(String.Join("\n", employeeData)); 
-      Debug.Log("Culprit:" + " " + employeeData[0].employeeName); // <------ Debug.log Quicksort output
-        
-        
-      int[] numbers = {3,1,2, 6, 8, 2, 10, 8, 3, 8};
-      QuickSortAlgorithm.QuickSortTask(numbers, 0, numbers.Length - 1, x => x); 
-      Debug.Log(String.Join(",", numbers)); 
-      DateTime mintarget = new (100, 08, 09);
-      DateTime maxtarget = new (200, 08, 09); 
+ public override void Execute() 
+ {
+    hashScript = new HashScript(); 
+    var stop = System.Diagnostics.Stopwatch.StartNew();
+    stop.Start(); // Start timer
+    QuickSortAlgorithm.QuickSortTask(employeeData, 0, employeeData.Length - 1, valueToPrioritize => valueToPrioritize.employeeLastEntrenance);
+    stop.Stop();  // Stop timer
+    // Debug.Log(stop.ElapsedMilliseconds); // Show time
+    Debug.Log("Array sorted!"); 
+    Debug.Log(String.Join("\n", employeeData)); 
 
-      BinarySearch.BinarySearchAlgorithm(employeeData, mintarget, maxtarget, x => x.employeeLastEntrenance); 
+    int[] arr = new int[] {2,3,4,5,6}; 
 
-    }
+      
+    hashScript.Insert(2); 
+    hashScript.Insert(3); 
+    hashScript.Insert(4);
+    hashScript.Insert(5);
+    hashScript.Insert(40);  
+    hashScript.GetValue(2, 6);
+      
+
+      
+
+
+      
+        
+        
+     
+
+ }
 }
 
 

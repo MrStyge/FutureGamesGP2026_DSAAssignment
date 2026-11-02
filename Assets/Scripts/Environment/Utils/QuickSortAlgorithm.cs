@@ -50,7 +50,7 @@ public static class QuickSortAlgorithm
     array[end] = temp; 
     return i;
         
- }
+}
 
 
 }
