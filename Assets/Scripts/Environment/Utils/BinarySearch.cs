@@ -38,16 +38,13 @@ private static int SearchMinValue<T, TKey>(T[] array, TKey min,Func<T, TKey> key
     {
     int mid = (left + right) / 2; 
     
-    if(comparer.Compare(keySelector(array[mid]),min) >= 0) 
-    {
-     right = mid - 1;
-     result = mid;  
-    
+    if(comparer.Compare(keySelector(array[mid]),min) >= 0)  {
+        right = mid - 1;
+        result = mid;  
     }
-    else
-    {
-     left = mid + 1; 
-    }
+      else {
+        left = mid + 1; 
+      }
 
         
         
@@ -71,7 +68,6 @@ public static int SearchMaxValue<T, TKey>(T[] array, TKey max, Func<T, TKey> key
     if(comparer.Compare(keySelector(array[mid]),max) > 0) 
     {
      right = mid - 1;
-    
     }
     else
     {

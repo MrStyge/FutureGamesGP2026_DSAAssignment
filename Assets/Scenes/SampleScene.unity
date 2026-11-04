@@ -5647,7 +5647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: queueTasks.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'testTask.Array.data[0]'
@@ -5677,6 +5677,10 @@ PrefabInstance:
       propertyPath: 'queueTasks.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 0e76c4cf1448a334a82c157b801c68fb, type: 2}
+    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: 'queueTasks.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c43ff2837a933249a97ceebd021b5c1, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: stackTaskTest.Array.size
       value: 0
