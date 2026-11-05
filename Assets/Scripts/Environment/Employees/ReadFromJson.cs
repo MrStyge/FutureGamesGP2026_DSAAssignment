@@ -9,7 +9,7 @@ namespace Environment.Tasks {
     public class ReadFromJson : Task {
       public TextAsset EmployeeJSON; 
       static public int arrayLength;
-      [SerializeField] private SortEmployees sortEmployeesTask; 
+     
        
  
       
@@ -63,7 +63,7 @@ namespace Environment.Tasks {
       
    
    }
-    sortEmployeesTask.employeeData = tempTuple;
+    SortEmployees.employeeData = tempTuple;
 
   
         }

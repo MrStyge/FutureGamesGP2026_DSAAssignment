@@ -6,16 +6,14 @@ using System;
  {  
     private static HashScript instance;
 
-    public static HashScript Instance
-    {
-    get
-    {
-     if (instance == null)
-     {
-      instance = new HashScript(); 
-     }
-     return instance; 
-    }
+    public static HashScript Instance {
+        get {
+            if (instance == null) {
+                instance = new HashScript(); 
+            }
+        
+           return instance; 
+        }
     }
 
     
@@ -23,13 +21,12 @@ using System;
 
     public HashScript() {
     
-        hashMap = new List<DateTime>[1024]; 
+        hashMap = new List<DateTime>[1009]; 
 
-        for(int i = 0; i < hashMap.Length; i++)
-        {
-         hashMap[i] = new List<DateTime>(); 
+        for(int i = 0; i < hashMap.Length; i++) {
+            hashMap[i] = new List<DateTime>(); 
         }
-    }
+     }
  
  
  private static int CalculateHash(DateTime valueToHash, int hashMapLength)
@@ -39,10 +36,12 @@ using System;
 
        return -1; 
     }
-    string valueString = valueToHash.ToString("yyyyMMddHHmmss"); 
-    long valueToHashLong = long.Parse(valueString); 
-    long rawHash = valueToHashLong % hashMapLength; 
-    return (int)Math.Abs(rawHash); 
+
+     string valueString = valueToHash.ToString("yyyyMMddHHmmss"); 
+     long valueToHashLong = long.Parse(valueString); 
+     long rawHash = (int) (valueToHashLong % hashMapLength);    
+     return (int)Math.Abs(rawHash); 
+
  }
 
 
@@ -51,65 +50,53 @@ using System;
  {
     int hash = CalculateHash(valueToInsert, hashMap.Length); 
 
-    if(hashMap[hash].Count == 0) {
-
+    if (!hashMap[hash].Contains(valueToInsert)) {
         hashMap[hash].Add(valueToInsert); 
-    }
-
-    else {
-
-    int i;
-
-    for(i = 0; i < hashMap[hash].Count; i++) {
+     }
     
-    }
-
-    hashMap[hash].Add(valueToInsert); 
-   }
  }
 
 
- public List<DateTime> GetValue(DateTime inValueToSearchMin, DateTime inValueToSearchMax)
+ public List<DateTime> GetValueInRange(DateTime inValueToSearchMin, DateTime inValueToSearchMax)
  {
     List<DateTime> tempList = new List<DateTime>(); 
-    int indexMin = CalculateHash(inValueToSearchMin, hashMap.Length); 
-    int indexMax = CalculateHash(inValueToSearchMax, hashMap.Length); 
-    
-    for(int i = 0; i < hashMap[indexMin].Count; i++) {
-        if (hashMap[indexMin][i] == inValueToSearchMin) {
-            tempList.Add(hashMap[indexMin][i]); 
-        }
-    }
-    
-    for(int j = 0; j < hashMap[indexMax].Count; j++) {
-        if(hashMap[indexMax][j] == inValueToSearchMax) {
-           tempList.Add(hashMap[indexMax][j]); 
-        }
-    }
-
-
-    if(tempList.Count == 0) {
-     
-    }
   
-    for(int k = 0; k < hashMap.Length; k++)
-    {
-        for(int l = 0; l < hashMap[k].Count; l++)
-        {
-            if(hashMap[k][l] > inValueToSearchMin && hashMap[k][l] < inValueToSearchMax)
-            {
-             Debug.Log("Value found!" + hashMap[k][l] + "\n"); 
+    for(int n = 0; n < hashMap.Length; n++) {
 
+        for(int l = 0; l < hashMap[n].Count; l++) {
+
+            if(hashMap[n][l] > inValueToSearchMin && hashMap[n][l] < inValueToSearchMax) {
+                Debug.Log("Value found!" + " " + hashMap[n][l] + "\n"); 
+                tempList.Add(hashMap[n][l]); 
             }        
+        }  
+    }
+    return tempList;
+ }
+
+ public void GetValue(DateTime value)
+ {
+    int hashValue = CalculateHash(value, hashMap.Length); 
+
+    if(hashMap[hashValue][0] == value) {
+        Debug.Log("Found the value!"); 
+    }
+    else {
+        for (int i = 0; i < hashMap[hashValue].Count; i++) {
+            if(hashMap[hashValue][i] == value)
+            {
+                Debug.Log("Found the value in subarray!"); 
+                return;
+            }
         }
     }
 
-
-    Debug.Log("didnt find it"); 
-    return tempList; 
    
-
-
  }
 
  }
+
+ 
+
+ 
+

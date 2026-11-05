@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13e8befb5ae1445bba8af71ae2821eb5, type: 3}
-  m_Name: TestTask 3
-  m_EditorClassIdentifier: Assembly-CSharp::Environment.Tasks.DebugPrintTask
-  textToPrint: Test 3
+  m_Script: {fileID: 11500000, guid: 8a8e9a70bf3e79448bfc622f89c3a342, type: 3}
+  m_Name: HashMapTask
+  m_EditorClassIdentifier: Assembly-CSharp::HashMapTask

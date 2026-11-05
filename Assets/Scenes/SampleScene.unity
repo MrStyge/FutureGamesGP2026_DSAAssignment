@@ -5660,7 +5660,7 @@ PrefabInstance:
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'testTask.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: 3248f3a8de6967046a47063577417348, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'testTask.Array.data[3]'
       value: 
@@ -5668,11 +5668,11 @@ PrefabInstance:
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'queueTasks.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 21ecb3a03036f8e47b961ecdd8daf63c, type: 2}
+      objectReference: {fileID: 11400000, guid: 6d9a22f2c3a44e4469635c8c3dd25a01, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'queueTasks.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: c2f639e80be09474987f4a4cc10acb3c, type: 2}
+      objectReference: {fileID: 11400000, guid: 3248f3a8de6967046a47063577417348, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'queueTasks.Array.data[2]'
       value: 
@@ -5680,7 +5680,7 @@ PrefabInstance:
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: 'queueTasks.Array.data[3]'
       value: 
-      objectReference: {fileID: 11400000, guid: 4c43ff2837a933249a97ceebd021b5c1, type: 2}
+      objectReference: {fileID: 11400000, guid: 74904b63f7ed09242a468b9609dcafdc, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: stackTaskTest.Array.size
       value: 0

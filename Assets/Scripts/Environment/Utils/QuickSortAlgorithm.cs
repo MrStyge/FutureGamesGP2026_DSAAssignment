@@ -11,10 +11,11 @@ public static class QuickSortAlgorithm
  public static void QuickSortTask<T, TKey>(T[] array, int start, int end, Func<T, TKey> key) where TKey: IComparable<TKey> 
  { 
              
-            if(end <= start) return; 
-            int pivot = Partition(array, start, end, key); 
-            QuickSortTask(array, start, pivot - 1, key); 
-            QuickSortTask(array, pivot + 1, end, key);  
+  if(end <= start) return; 
+  int pivot = Partition(array, start, end, key); 
+  QuickSortTask(array, start, pivot - 1, key); 
+  QuickSortTask(array, pivot + 1, end, key);  
+  
  }
     
 
