@@ -15,7 +15,7 @@
   
      for(int i = minValue; i <= maxValue; i++ ) {
          T number = array[i]; 
-         Debug.Log("These are the numbers between min and max" + " " + number); 
+       // Debug.Log("These are the numbers between min and max" + " " + number); 
       }
   
  }
@@ -33,11 +33,11 @@
      int result = -1;
     
 
-     while(left <= right) {
-         int mid = (left + right) / 2; 
+     while(left <= right) { // while left is smaller or equal to right, do the following 
+         int mid = (left + right) / 2; // declare mid 
      
-         if(comparer.Compare(keySelector(array[mid]),min) >= 0)  {
-             right = mid - 1;
+         if(comparer.Compare(keySelector(array[mid]),min) >= 0)  { // if the middle of the array is bigger or equal to minimum
+             right = mid - 1; 
              result = mid;  
          } else {
            left = mid + 1; 
@@ -56,13 +56,12 @@
      int result = -1;
      
 
-     while(left <= right) {
-         int mid = (left + right) / 2; 
+     while(left <= right) { // while left is smaller or equal to right, do the following 
+         int mid = (left + right) / 2; // declare what mid is 
      
-         if(comparer.Compare(keySelector(array[mid]),max) > 0) {
-             right = mid - 1;
-         }
-         else {
+         if(comparer.Compare(keySelector(array[mid]),max) > 0) { // if the middle of the array is bigger than max 
+             right = mid - 1; 
+         } else {
             result = mid; 
             left = mid + 1; 
          }

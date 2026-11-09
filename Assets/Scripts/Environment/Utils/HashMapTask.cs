@@ -13,7 +13,7 @@ public class HashMapTask : Task
     DateTime date2 = new DateTime(2234, 08, 01, 00, 34, 19);
 
     // Insert a value into the hashmap
-    var stopInsert = System.Diagnostics.Stopwatch.StartNew();
+    var stopInsert = new System.Diagnostics.Stopwatch();
     stopInsert.Start();
     HashScript.Instance.Insert(date1);
     HashScript.Instance.Insert(date2);
@@ -23,7 +23,7 @@ public class HashMapTask : Task
     // END
 
     // Get all values between specified range
-    var stop = System.Diagnostics.Stopwatch.StartNew();
+    var stop = new System.Diagnostics.Stopwatch();
     stop.Start();
     HashScript.Instance.GetValueInRange(date1, date2); 
     stop.Stop(); 
@@ -34,7 +34,7 @@ public class HashMapTask : Task
     
     // Get ONE value from hashmap 
 
-    var stopGetValue = System.Diagnostics.Stopwatch.StartNew();
+    var stopGetValue = new System.Diagnostics.Stopwatch();
     stopGetValue.Start(); 
     HashScript.Instance.GetValue(date2); 
     stopGetValue.Stop(); 

@@ -14,9 +14,9 @@ namespace Environment.Tasks {
   
     private HashScript hashScript; 
    
-    public static (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] employeeData; 
+    public static EmployeeInfo[] employeeData; 
             
-
+ 
            
  public override void Execute() 
  {

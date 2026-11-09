@@ -17,18 +17,21 @@ namespace Environment.Tasks {
             
 
            
-    public override void Execute() {
-     string name1 = "a"; 
-     string name2 = "b"; 
-      DateTime mintarget = new (100, 08, 09);
-      DateTime maxtarget = new (200, 08, 09); 
-      var stop = System.Diagnostics.Stopwatch.StartNew();
-      BinarySearch.BinarySearchAlgorithm(SortEmployees.employeeData, mintarget, maxtarget, x => x.employeeLastEntrenance); 
-      stop.Stop(); 
-      Debug.Log("Binary search done!" + " " + "It took:" + " " + stop.ElapsedTicks + " " + "ticks"); 
-      Debug.Log("Binary search done!" + " " + "It took:" + " " + stop.ElapsedMilliseconds + " " + "milliseconds"); 
+ public override void Execute() 
+ {
+    string name1 = "a"; 
+    string name2 = "b"; 
+    DateTime mintarget = new (1, 08, 09);
+    DateTime maxtarget = new (3000, 08, 09); 
+ 
+   
+    var stop = System.Diagnostics.Stopwatch.StartNew();
+    BinarySearch.BinarySearchAlgorithm<EmployeeInfo, DateTime>(SortEmployees.employeeData, mintarget, maxtarget, x => x.parsedEntranceTime); 
+    stop.Stop(); 
+    Debug.Log("Binary search done!" + " " + "It took:" + " " + stop.ElapsedTicks + " " + "ticks"); 
+    Debug.Log("Binary search done!" + " " + "It took:" + " " + stop.ElapsedMilliseconds + " " + "milliseconds"); 
 
-    }
+ }
 }
 
 

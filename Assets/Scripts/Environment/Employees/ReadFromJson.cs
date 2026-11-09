@@ -9,7 +9,8 @@ namespace Environment.Tasks {
     public class ReadFromJson : Task {
       public TextAsset EmployeeJSON; 
       static public int arrayLength;
-     
+       
+       
        
  
       
@@ -18,52 +19,40 @@ namespace Environment.Tasks {
 
 
       public override void Execute() {
-         
+       
          EmployeeInfo[] employees = JsonUtility.FromJson<EmployeesHelper>(EmployeeJSON.text).Employees; 
          arrayLength = employees.Length; 
-         (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit )[] tempTuple = 
-         new (string employeeName, int employeeID, bool hasEngineClearance, DateTime employeeLastEntrenance, DateTime employeeLastExit)[arrayLength]; 
-         
+        
+       
          int i = 0; 
 
         foreach (EmployeeInfo employee in employees)
         {
           
-          // Parse the name 
-          string employeeName = employee.name; 
-
-          // Parse the EmployeeID
-
-          string inputInt = employee.employeeId; 
-          int myEmployeeID = int.Parse(inputInt); 
-
-          // Parse the hasEngineRoomClearance
-
-          string inputName = employee.hasEngineRoomClearance; 
-          bool hasClearance = bool.Parse(inputName); 
-
-          // Parse the lastEntranceInEngineRoom 
+        
           
           string lastEntrenance = employee.lastEntranceInEngineRoom; 
-          DateTime myLastEntranceInEngineRoom = DateTime.Parse(lastEntrenance); 
+          employee.parsedEntranceTime = DateTime.Parse(lastEntrenance); 
           
           // Parse the last exit 
 
           string lastExit = employee.lastExitFromEngineRoom; 
-          DateTime myLastExitFromEngineRoom  = DateTime.Parse(lastExit); 
+          employee.parsedExitTime = DateTime.Parse(lastExit); 
    
    
  
          
-         tempTuple[i] = 
-        (employeeName: employeeName, employeeID: myEmployeeID, hasEngineClearance: hasClearance, employeeLastEntrenance: myLastEntranceInEngineRoom, employeeLastExit: myLastExitFromEngineRoom); 
         
-         HashScript.Instance.Insert(myLastEntranceInEngineRoom); 
+        
+         HashScript.Instance.Insert(employee.parsedEntranceTime); 
+        
+        
          i++; 
       
    
    }
-    SortEmployees.employeeData = tempTuple;
+     SortEmployees.employeeData = employees;
+  
 
   
         }

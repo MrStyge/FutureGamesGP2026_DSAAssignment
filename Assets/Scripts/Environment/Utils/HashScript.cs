@@ -33,7 +33,6 @@ using System;
  {
 
     if(hashMapLength == 0) {
-
        return -1; 
     }
 
@@ -41,6 +40,18 @@ using System;
      long valueToHashLong = long.Parse(valueString); 
      long rawHash = (int) (valueToHashLong % hashMapLength);    
      return (int)Math.Abs(rawHash); 
+
+ }
+
+ private static int CalculateHashTwo(DateTime valueToHash, int hashMapLength)
+ {
+  if(hashMapLength == 0) {
+   return - 1;
+  }
+
+  return 1; 
+
+  
 
  }
 

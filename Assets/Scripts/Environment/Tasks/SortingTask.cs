@@ -12,12 +12,16 @@ namespace Environment.Tasks {
  public override void Execute() 
  {
    var stop = System.Diagnostics.Stopwatch.StartNew();
-   QuickSortAlgorithm.QuickSortTask(SortEmployees.employeeData, 0, SortEmployees.employeeData.Length - 1, valueToPrioritize => valueToPrioritize.employeeLastEntrenance);
+   QuickSortAlgorithm.QuickSortTask(SortEmployees.employeeData, 0, SortEmployees.employeeData.Length - 1, valueToPrioritize => valueToPrioritize.parsedEntranceTime);
    stop.Stop(); 
    Debug.Log("Array sorted!" + " " + "It took:" + " " + stop.ElapsedTicks + " " + "ticks"); 
    Debug.Log("Array sorted!" + " " + "It took:" + " " + stop.ElapsedMilliseconds + " " +  "milliseconds"); 
-   Debug.Log(String.Join("\n", SortEmployees.employeeData)); 
+  // Debug.Log(String.Join("\n", SortEmployees.employeeData)); 
 
+   
+    
+    
+   
     
  }
 

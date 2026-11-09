@@ -5682,6 +5682,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 74904b63f7ed09242a468b9609dcafdc, type: 2}
     - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
+      propertyPath: 'queueTasks.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 74904b63f7ed09242a468b9609dcafdc, type: 2}
+    - target: {fileID: 1261029998129311158, guid: 7d560e7070230eb46aeb1576bedf22f3, type: 3}
       propertyPath: stackTaskTest.Array.size
       value: 0
       objectReference: {fileID: 0}
