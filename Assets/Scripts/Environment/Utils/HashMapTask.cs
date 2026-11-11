@@ -33,13 +33,22 @@ public class HashMapTask : Task
     // END 
     
     // Get ONE value from hashmap 
-
+   
     var stopGetValue = new System.Diagnostics.Stopwatch();
     stopGetValue.Start(); 
     HashScript.Instance.GetValue(date2); 
     stopGetValue.Stop(); 
     Debug.Log("One value gotten from hashmap!" + " " + "It took:" + " " + stopGetValue.ElapsedTicks + " " + "ticks"); 
     Debug.Log("One value gotten from hashmap" + " " + "It took:" + " " + stopGetValue.ElapsedMilliseconds + " " +  "milliseconds"); 
+
+    HashScript.Instance.InsertTwo(date1);
+    HashScript.Instance.InsertTwo(date2);
+    var stopGetValueTwo = new System.Diagnostics.Stopwatch();
+    stopGetValueTwo.Start(); 
+    HashScript.Instance.GetValueTwo(date2); 
+    stopGetValueTwo.Stop(); 
+    Debug.Log("One value gotten from hashmap!" + " " + "It took:" + " " + stopGetValueTwo.ElapsedTicks + " " + "ticks" + " " + "(second method)"); 
+    Debug.Log("One value gotten from hashmap" + " " + "It took:" + " " + stopGetValueTwo.ElapsedMilliseconds + " " +  "milliseconds" + " " + "(second method)"); 
 
     // End 
 

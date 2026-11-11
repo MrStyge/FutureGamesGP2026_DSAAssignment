@@ -3,6 +3,7 @@ using System;
 using System.Collections; 
 using System.Collections.Generic; 
 using Utils;
+using System.Linq;
 
 namespace Environment.Tasks {
        [CreateAssetMenu(fileName = "SortTask", menuName = "Sort Task")]
@@ -16,7 +17,7 @@ namespace Environment.Tasks {
    stop.Stop(); 
    Debug.Log("Array sorted!" + " " + "It took:" + " " + stop.ElapsedTicks + " " + "ticks"); 
    Debug.Log("Array sorted!" + " " + "It took:" + " " + stop.ElapsedMilliseconds + " " +  "milliseconds"); 
-  // Debug.Log(String.Join("\n", SortEmployees.employeeData)); 
+   Debug.Log(String.Join("\n", SortEmployees.employeeData.Select(e => e.parsedEntranceTime))); 
 
    
     

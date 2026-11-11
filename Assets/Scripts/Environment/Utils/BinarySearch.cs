@@ -5,17 +5,17 @@
 
  public static class BinarySearch 
  {
-
- public static void BinarySearchAlgorithm<T, TKey>(T[] array, TKey min, TKey max, Func<T, TKey> keySelector) where TKey: IComparable <TKey>
+ public static void BinarySearchAlgorithm<T, TKey>(T[] array, TKey min, TKey max, Func<T, TKey> keySelector, List<T> results = null) where TKey: IComparable <TKey>
  {
-    
+     results?.Clear(); 
      IComparer<TKey> comparer = System.Collections.Generic.Comparer<TKey>.Default; 
      int minValue = SearchMinValue<T, TKey>(array, min, keySelector, comparer); 
      int maxValue = SearchMaxValue<T, TKey>(array, max, keySelector, comparer); 
   
      for(int i = minValue; i <= maxValue; i++ ) {
-         T number = array[i]; 
-       // Debug.Log("These are the numbers between min and max" + " " + number); 
+         T suspects = array[i]; 
+         results?.Add(array[i]); 
+        // Debug.Log("These are the suspects!" + " " + suspects); 
       }
   
  }

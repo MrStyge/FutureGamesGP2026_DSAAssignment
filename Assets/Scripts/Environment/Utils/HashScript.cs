@@ -48,9 +48,15 @@ using System;
   if(hashMapLength == 0) {
    return - 1;
   }
+  
+  // using formula "hash * 33 + c" 
+  string currentString = valueToHash.ToString(); 
+  int intValue = 5381;  
+  foreach(char l in currentString) {
+  intValue = intValue * 33 + l; 
+  }
 
-  return 1; 
-
+  return (int)Math.Abs(intValue % hashMapLength);
   
 
  }
@@ -60,6 +66,16 @@ using System;
  public void Insert(DateTime valueToInsert)
  {
     int hash = CalculateHash(valueToInsert, hashMap.Length); 
+
+    if (!hashMap[hash].Contains(valueToInsert)) {
+        hashMap[hash].Add(valueToInsert); 
+     }
+    
+ }
+
+ public void InsertTwo(DateTime valueToInsert)
+ {
+    int hash = CalculateHashTwo(valueToInsert, hashMap.Length); 
 
     if (!hashMap[hash].Contains(valueToInsert)) {
         hashMap[hash].Add(valueToInsert); 
@@ -88,7 +104,7 @@ using System;
  public void GetValue(DateTime value)
  {
     int hashValue = CalculateHash(value, hashMap.Length); 
-
+    
     if(hashMap[hashValue][0] == value) {
         Debug.Log("Found the value!"); 
     }
@@ -97,6 +113,26 @@ using System;
             if(hashMap[hashValue][i] == value)
             {
                 Debug.Log("Found the value in subarray!"); 
+                return;
+            }
+        }
+    }
+
+   
+ }
+
+  public void GetValueTwo(DateTime value)
+ {
+    int hashValue = CalculateHashTwo(value, hashMap.Length); 
+    
+    if(hashMap[hashValue][0] == value) {
+        Debug.Log("Found the value!" + "(second method)"); 
+    }
+    else {
+        for (int i = 0; i < hashMap[hashValue].Count; i++) {
+            if(hashMap[hashValue][i] == value)
+            {
+                Debug.Log("Found the value in subarray!" + "(second method)"); 
                 return;
             }
         }

@@ -12,6 +12,9 @@ public class EmployeeInfo
    public DateTime parsedExitTime;
 
 
- 
+ public override string ToString()
+ {
+  return name; 
+ }
 
 }
