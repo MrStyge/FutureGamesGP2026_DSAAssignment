@@ -9,7 +9,8 @@ using System.Linq;
 
 namespace Environment.Tasks {
   [CreateAssetMenu(fileName = "SearchTask", menuName = "Search Task")]
-   public class SearchTask : Task {
+ public class SearchTask : Task 
+ {
       
  
    
@@ -18,18 +19,16 @@ namespace Environment.Tasks {
 
            
  public override void Execute() 
- {
-    string name1 = "a"; 
-    string name2 = "b"; 
+ { 
     DateTime mintarget = new (2234, 08, 09, 22, 00, 00);
     DateTime maxtarget = new (2234, 08, 09, 23, 00, 00); 
-     List<EmployeeInfo> suspectsExit = new List<EmployeeInfo>();
-     List<EmployeeInfo> suspectsEntrance = new List<EmployeeInfo>();
+    List<EmployeeInfo> suspectsExit = new List<EmployeeInfo>();
+    List<EmployeeInfo> suspectsEntrance = new List<EmployeeInfo>();
     var stop = System.Diagnostics.Stopwatch.StartNew();
     BinarySearch.BinarySearchAlgorithm<EmployeeInfo, DateTime>(SortEmployees.employeeData, mintarget, maxtarget, x => x.parsedEntranceTime, suspectsEntrance);
     stop.Stop(); 
     QuickSortAlgorithm.QuickSortTask(SortEmployees.employeeData, 0, SortEmployees.employeeData.Length - 1, valueToPrioritize => valueToPrioritize.parsedExitTime); 
-    
+
     BinarySearch.BinarySearchAlgorithm<EmployeeInfo, DateTime>(SortEmployees.employeeData, mintarget, maxtarget, x => x.parsedExitTime, suspectsExit); 
     
    
@@ -38,13 +37,10 @@ namespace Environment.Tasks {
 
     foreach(EmployeeInfo suspect in suspectsEntrance) {
         if(suspectsExit.Contains(suspect)) {
-         Debug.Log("The murderer is" + " " + suspect.name); 
+            Debug.Log("The murderer is" + " " + suspect.name); 
         }
     }
     
  }
-}
-
-
-
+ }
 }
